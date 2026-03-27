@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OrgNode } from '@/types/organograma';
@@ -229,8 +230,8 @@ function Avatar({ node, size = 'md', glow = false }: { node: OrgNode; size?: 'sm
 
   if (node.imageUrl) {
     return (
-      <div className={`${sz} rounded-full overflow-hidden ring-2 ring-white/15 shadow-lg shrink-0`} style={glowStyle}>
-        <img src={node.imageUrl} alt={node.label} className="w-full h-full object-cover" />
+      <div className={`${sz} relative rounded-full overflow-hidden ring-2 ring-white/15 shadow-lg shrink-0`} style={glowStyle}>
+        <Image src={node.imageUrl} alt={node.label} fill className="object-cover" />
       </div>
     );
   }

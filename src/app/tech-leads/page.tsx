@@ -321,7 +321,7 @@ export default function TechLeadsPage() {
   }, [search, dominioFilter, productSearch]);
 
   /** Todos os produtos únicos para o modo "Quem é responsável?" */
-  const allProducts = useMemo(() => [...new Set(LEADS.flatMap(l => l.produtos))].sort(), []);
+  const allProducts = useMemo(() => Array.from(new Set(LEADS.flatMap(l => l.produtos))).sort(), []);
 
   const responsavelPorProduto = useMemo(() => {
     if (!productSearch.trim()) return null;
