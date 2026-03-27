@@ -356,7 +356,7 @@ export default function TechLeadsPage() {
           <div className="flex flex-wrap gap-4">
             {[
               { value: LEADS.length,                                  label: 'Tech Leads' },
-              { value: [...new Set(LEADS.map(l => l.dominio))].length, label: 'Domínios' },
+              { value: Array.from(new Set(LEADS.map(l => l.dominio))).length, label: 'Domínios' },
               { value: LEADS.flatMap(l => l.produtos).length,         label: 'Produtos' },
             ].map(({ value, label }, i) => (
               <div key={label} className="flex items-center gap-2">
@@ -514,7 +514,7 @@ export default function TechLeadsPage() {
             {DOMINIOS.filter(d => LEADS.some(l => l.dominio === d)).map(d => {
               const ds = DOMINIO_STYLE[d];
               const leadsNoDominio = LEADS.filter(l => l.dominio === d);
-              const produtosNoDominio = [...new Set(leadsNoDominio.flatMap(l => l.produtos))];
+              const produtosNoDominio = Array.from(new Set(leadsNoDominio.flatMap(l => l.produtos)));
               return (
                 <button
                   key={d}

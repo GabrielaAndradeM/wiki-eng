@@ -893,7 +893,7 @@ function TreeNode({
   const teamMembers = collectDirectTeam(node);
 
   const isRoot   = depth === 0;
-  const isExec   = node.type === 'executive' || node.type === 'director' || node.type === 'vp';
+  const isExec   = node.type === 'executive' || node.type === 'vp';
   const isLead   = node.type === 'lead' || node.type === 'coordinator';
   const isMember = node.type === 'team';
 
@@ -1427,7 +1427,7 @@ const LEVEL_CONFIG: LevelConfig[] = [
     bg: 'bg-amber-500/5',
     glow: 'rgba(245,158,11,0.15)',
     bar: 'bg-amber-500',
-    types: ['executive', 'director', 'vp'],
+    types: ['executive', 'vp'],
     excludeAreaNodes: true,
   },
   {
