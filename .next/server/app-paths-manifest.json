@@ -1,0 +1,9 @@
+{
+  "/fluxos/page": "app/fluxos/page.js",
+  "/page": "app/page.js",
+  "/processos/page": "app/processos/page.js",
+  "/times/page": "app/times/page.js",
+  "/areas/page": "app/areas/page.js",
+  "/organograma/page": "app/organograma/page.js",
+  "/tech-leads/page": "app/tech-leads/page.js"
+}
